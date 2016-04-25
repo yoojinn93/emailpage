@@ -38,4 +38,27 @@ class HomeController < ApplicationController
   def list
       @every_sendmail = Sendmail.all.order("id desc")
   end
+  
+  def destroy
+      @one_sendmail = Sendmail.find(params[:sendmail_id])
+      @one_sendmail.destroy
+      
+      redirect_to "/list"
+  end
+  
+  def update_view
+      @one_sendmail = Sendmail.find(params[:sendmail_id])
+  end
+  
+  def real_update
+      @one_sendmail = Sendmail.find(params[:sendmail_id])
+      
+      @one_sendmail.emailto = params[:emailto]
+      @one_sendmail.title = params[:title]
+      @one_sendmail.content = params[:content]
+      @one_sendmail.save
+      
+      redirect_to '/list'
+  end
+  
 end

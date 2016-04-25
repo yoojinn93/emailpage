@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
   post '/success' => 'home#success'
   get '/list' => 'home#list'
-
+  get '/destroy/:sendmail_id' => 'home#destroy'
+  get '/update_view/:sendmail_id' => 'home#update_view'
+  post '/real_update/:sendmail_id' => 'home#real_update'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
