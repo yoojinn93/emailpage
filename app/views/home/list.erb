@@ -54,15 +54,17 @@
             <div class="col-md-8 col-md-offset-2">
                 <h1>보낸 메일함</h1>
                 
-                <div style="text-align: left; width:100%; height:550px; overflow:auto">
+                <div style="text-align:left; width:100%; height:550px; overflow:auto">
                     <% @every_sendmail.each do |e| %>
                     
                     받는사람 : <%= e.emailto %> <br>
                     제    목 : <%= e.title %> <br>
                     내    용 : <%= e.content %> <br>
                     보낸시간 : <%= e.created_at %>
-                    <a href="/update_view/<%= e.id %>">[수정]</a>
-                    <a href="/destroy/<%= e.id %>">[삭제]</a>
+                    <div style="text-align:right;">
+                        <a href="/update_view/<%= e.id %>">[수정]</a>
+                        <a href="/destroy/<%= e.id %>">[삭제]</a>
+                    </div>
                     <hr>
                     <% end %>
                 </div>
