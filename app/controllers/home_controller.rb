@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       mg_client = Mailgun::Client.new("key-725e994f9ff7cc311463453c5b7004a0")
   
       message_params =  {
-                         from: 'yoojinn93@naver.com',
+                         from: 'skku@skku.edu',
                          to:   @emailto_,
                          subject: @title_,
                          text:    @content_,
